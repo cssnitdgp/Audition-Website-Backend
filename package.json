@@ -1,0 +1,31 @@
+{
+  "name": "audition-website-backend",
+  "version": "1.0.0",
+  "description": "Official Backend for CSS Audition Website",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cssnitdgp/Audition-Website-Backend.git"
+  },
+  "author": "Himanshu Khaitan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cssnitdgp/Audition-Website-Backend/issues"
+  },
+  "homepage": "https://github.com/cssnitdgp/Audition-Website-Backend#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
