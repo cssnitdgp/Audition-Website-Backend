@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Routes
+app.use("/api/form", require("./routes/form"));
 
 // Basic or Home Route
 app.get("/", (req, res) => {
