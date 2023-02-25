@@ -27,18 +27,17 @@ router.post("/add", async (req, res) => {
   if (!isValid) {
     return res.status(400).json(errors);
   }
-
   try {
     // Checking if the user has already filled the form
     const exisitngForm = await Form.findOne({ email: req.body.email });
 
     // If the user has already filled the form
     if (exisitngForm) {
-      return res.status(400).json({ email: "User Already Exists" });
+      return res.status(200).json({ message: "Form already Submitted!" });
     }
-
+    console.log("Reached!")
     // If the user has not filled the form, Create a new form
-    const newForm = await new Form({
+    const newForm = new Form({
       name: req.body.name,
       email: req.body.email,
       rollno: req.body.rollno,
@@ -47,9 +46,9 @@ router.post("/add", async (req, res) => {
       github: req.body.github,
       linkedin: req.body.linkedin,
       introduction: req.body.introduction,
-      roles: req.body.skills,
+      roles: req.body.roles,
       preference: req.body.preference,
-      rating: req.body.rating,
+      skills: req.body.skills,
       proj_link: req.body.proj_link,
       hardworking: req.body.hardworking,
       teamwork: req.body.teamwork,
@@ -59,13 +58,13 @@ router.post("/add", async (req, res) => {
       problemSolving: req.body.problemSolving,
       responsibility: req.body.responsibility,
     });
-
     // Saving Form
     await newForm.save();
 
     // Sending Response
     return res.status(200).json({ message: "Form Submitted Successfully" });
   } catch (err) {
+    console.log(err);
     return res.status(500).json({ error: "Internal Server Error" });
   }
 });

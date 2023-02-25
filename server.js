@@ -1,6 +1,7 @@
 // Import Statements
 const express = require("express");
 const http = require("http");
+const cors = require("cors");
 const bodyParser = require("body-parser");
 const logging = require("./middlewares/logging");
 
@@ -10,9 +11,14 @@ const app = express();
 // Middlewares
 app.use(express.json());
 app.use(logging);
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 // PARSE application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // PARSE application/json
 app.use(bodyParser.json());

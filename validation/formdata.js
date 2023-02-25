@@ -30,6 +30,8 @@ const isEmail = require("../utils/isEmail.js");
 const formDataValidator = (data) => {
   let errors = {};
 
+  errors.message = "";
+
   // Validating Name
   data.name = isEmpty(data.name) ? "" : data.name;
 
@@ -37,7 +39,7 @@ const formDataValidator = (data) => {
   data.email = isEmpty(data.email) ? "" : data.email;
 
   if (!isEmail(data.email)) {
-    errors.email = "Invalid Email.";
+    errors.message += "Invalid Email.";
   }
 
   // Validating Roll Number
@@ -63,21 +65,21 @@ const formDataValidator = (data) => {
 
   data.introduction = isEmpty(data.introduction) ? "" : data.introduction;
 
-  // Validating Skills
+  // Validating Roles
 
   data.roles = isEmpty(data.roles) ? [] : data.roles;
 
   if (!Array.isArray(data.roles)) {
-    errors.roles = "Skills must be an array.";
+    errors.message += "Skills must be an array.";
   }
 
   // Validating Preference
 
   data.preference = isEmpty(data.preference) ? "" : data.preference;
 
-  // Validating Rating
+  // Validating Skills
 
-  data.rating = isEmpty(data.rating) ? "" : data.rating;
+  data.skills = isEmpty(data.skills) ? "" : data.skills;
 
   // Validating Project Link
 
