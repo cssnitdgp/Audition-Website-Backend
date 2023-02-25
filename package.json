@@ -4,7 +4,7 @@
   "description": "Official Backend for CSS Audition Website",
   "main": "index.js",
   "scripts": {
-    "start": "npm index.js",
+    "start": "nodemon index.js",
     "dev": "nodemon index.js"
   },
   "repository": {

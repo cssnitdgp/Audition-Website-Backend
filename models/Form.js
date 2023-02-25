@@ -40,7 +40,7 @@ const formSchema = new Schema({
     type: String,
     required: true,
   },
-  rating: {
+  skills: {
     type: String,
     required: true,
   },
@@ -82,7 +82,6 @@ const Form = model("Form", formSchema);
 
 // Exporting Model
 module.exports = Form;
-
 
 /*
     name: String (Required),
