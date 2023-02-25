@@ -3,14 +3,14 @@ const express = require("express");
 const http = require("http");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const logging = require("./middlewares/logging");
+// const logging = require("./middlewares/logging");
 
 // Creating Express App
 const app = express();
 
 // Middlewares
 app.use(express.json());
-app.use(logging);
+// app.use(logging);
 app.use(
   cors({
     origin: "*",
