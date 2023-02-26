@@ -21,12 +21,12 @@ const formDataValidator = require("../validation/formdata.js");
 
 router.post("/add", async (req, res) => {
   // Validating Request Body
-  const { errors, isValid } = formDataValidator(req.body);
+  // const { errors, isValid } = formDataValidator(req.body);
 
   // Checking Validation
-  if (!isValid) {
-    return res.status(400).json(errors);
-  }
+  // if (!isValid) {
+  //   return res.status(400).json(errors);
+  // }
   try {
     // Checking if the user has already filled the form
     const exisitngForm = await Form.findOne({ email: req.body.email });
